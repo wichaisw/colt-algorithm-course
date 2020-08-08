@@ -3,8 +3,9 @@
 // - Frequency Counters (unofficial name) -
 
 // use objects or sets to collect values/frequencies of values
-// this can often avoid the need for nested loop or O(n^2) operations with arrays, strings
+// **this can often avoid the need for nested loop or O(n^2) operations with arrays, strings
 
+// ให้ รับ 2 array แล้วเช็กว่าสมาชิกใน array2 มีค่าเท่ากับสมาชิกใน array1 ยกกำลัง 2 และความถี่ในการปรากฏต้องเท่ากัน
 // my attempt: for loop & loop in indexOf
 // Time complexity O(n^2) quadratic
 /*
@@ -32,7 +33,7 @@
 
 same([1,2,3], [4,1,9])
 
-// Frequency Counters patter: 
+// Frequency Counters pattern: 
 // Tiem complexity O(n) linear
 // idea หลักคือการสร้าง object มาเก็บ frequency โดยให้ key เป็นค่าที่ต้องการนับ value เป็นจำนวนครั้งที่ปรากฏ
 // น่าจะเอาไปประยุกต์ใช้กับการหา unique object ใน array ได้
