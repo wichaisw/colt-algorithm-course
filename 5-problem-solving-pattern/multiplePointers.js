@@ -1,3 +1,4 @@
+// Multiple Pointers
 // จะใช้ multiplePointer ข้อมูลต้อง sorted มาแล้ว
 
 // รับ sorted array แล้วหา first pair ของสมาชิกที่ผลรวมเป็น 0
@@ -81,17 +82,17 @@ function countUniqueValues(arr) {
   return uniqueValues.length;
 }
 
+// My solution using multiple pointers with colt's hint
+// it's the same as Colt's solution
+// O(n) linear
 function countUniqueValues(arr) {
+  if(arr.length === 0) return 0;
   let i = 0;
-  let j = i + 1;
-  for(j; j < arr.length; j++) {
+  for(let j = 1; j < arr.length; j++) {
     if(arr[i] !== arr[j]) {
-      arr[i] = arr[j]
-      i++
-      console.log(arr[i])
+      i++;
+      arr[i] = arr[j];  
     }
   }
-  console.log('i', i)
-  return arr
+  return i + 1;
 }
-
