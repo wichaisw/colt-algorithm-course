@@ -73,10 +73,10 @@ function validAnagram(word, anagram){
   let frequencyCounter1 = {};
   let frequencyCounter2 = {};
     for(let cha of word) {
-        frequencyCounter1[cha] = (frequencyCounter1[cha] | 0) + 1;
+        frequencyCounter1[cha] = (frequencyCounter1[cha] || 0) + 1;
     }
     for(let cha of anagram) {
-        frequencyCounter2[cha] = (frequencyCounter2[cha] | 0) + 1;
+        frequencyCounter2[cha] = (frequencyCounter2[cha] || 0) + 1;
     }
     
     for(let key in frequencyCounter1) {
