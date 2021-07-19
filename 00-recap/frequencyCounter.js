@@ -92,5 +92,59 @@ const validateAnagram = (str1, str2) => {
   return true;
 }
 
-let isAnagram = validateAnagram(anagram1, anagram2)
-console.log(isAnagram)
+let isAnagram = validateAnagram(anagram1, anagram2);
+// console.log(isAnagram)
+
+
+// 3589578, 5879385
+const sameFrequency = (int1, int2) => {
+  let strInt1 = String(int1);
+  let strInt2 = String(int2);
+
+  if(strInt1.length !== strInt2.length) {
+    return false;
+  }
+
+  let counter1 = {};
+  let counter2 = {};
+
+  
+  for(let value of strInt1) {
+    counter1[value] = (counter1[value] ||  0) + 1;
+  }
+
+  for(let value of strInt2) {
+    counter2[value] = (counter2[value] || 0) + 1;
+  }
+
+  for(let key in counter1) {
+    if(counter1[key] !== counter2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+let sameFrequencyResult = sameFrequency(3589578, 5879385)
+
+// console.log("sameFrequency: ", sameFrequencyResult)
+
+const areThereDuplicates = (...data) => {
+  if(data.length === 0) {
+    return false;
+  }
+  let counter = {};
+
+  for(let value of data) {
+    counter[value] = (counter[value] || 0) + 1;
+  }
+
+  for(let key in counter) {
+    if(counter[key] > 1) {
+      return true;
+    }
+  }
+
+  return false;
+}

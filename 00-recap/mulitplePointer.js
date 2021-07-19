@@ -47,4 +47,38 @@ const sumZero = (arr) => {
 
 let resultArr = sumZero([-4,-3,-2,-1,0,1,2,3,10]);
 
-console.log(resultArr);
+// console.log(resultArr);
+
+// areThereDuplicate()
+const areThereDuplicates = (...data) => { 
+  if(data.length === 0) {
+    return false;
+  }
+
+  let left = 0;
+  let right = 1;
+
+  if(left === right) {
+    return false;
+  }
+
+  let sortedData = data.sort();
+
+  while(left < right) {
+    console.log(sortedData[left] )
+    if(sortedData[left] === sortedData[right]) {
+      return true;
+    }
+
+    left++;
+    right++;
+
+    if(right > sortedData.length) {
+      return false;
+    }
+  }
+
+}
+
+let duplicateRes =  areThereDuplicates('a','c','b','c');
+console.log("is duplicate:", duplicateRes)
