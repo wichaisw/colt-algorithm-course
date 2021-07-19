@@ -77,7 +77,6 @@ const areThereDuplicates = (...data) => {
       return false;
     }
   }
-
 }
 
 let duplicateRes =  areThereDuplicates('a','c','b','c');
