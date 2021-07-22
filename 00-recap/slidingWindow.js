@@ -154,10 +154,13 @@ const minSubArrayLen = (arr, num) => {
     }
 
     console.log("start", start)
-
+    console.log("end", end)
     console.log("sum: ", sum)
+    console.log("length: ", end - start)
+
     
     if(sum >= num) {      
+      // end or start already ++, so we don't have to add +1 to length
       minLength = Math.min(minLength, (end - start))
       
       sum -= arr[start]
