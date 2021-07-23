@@ -11,7 +11,7 @@ const binarySearch = (arr, val) => {
 
     if (arr[pointer] < val) {
       left = pointer + 1;
-    } else if (arr[pointer] > val) {
+    } else {
       right = pointer - 1;
     }
   }
