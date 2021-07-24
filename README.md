@@ -66,15 +66,25 @@
     * i.e. quick search, merge sort, binary-search, 
 
 ## Recursive Function
-    * function that repeatedly calls itself
-    * need base case to stop, normally with a return keyword
-    * repeat with different input
-    * i.e. DOM travel, open nested folders
-    * for arrays, use slice, spread operator, concat to not mutate the. For strings, use slice, substr, or substring
-    
+* function that repeatedly calls itself
+* need base case to stop, normally with a return keyword
+* repeat with different input
+* i.e. DOM travel, open nested folders
+* for arrays, use slice, spread operator, concat to not mutate the. For strings, use slice, substr, or substring
 
-## Search ALgorithms
+## Searching Algorithms
 ### Binary Search
-    * eliminates half of the remaining elements at at time
-    * only works on 'sorted' arrays
-    * use divide and conquer
+* eliminates half of the remaining elements at at time
+* only works on 'sorted' arrays
+* use divide and conquer
+
+
+## Sorting ALgorithms
+
+### Bubble Sort
+* the largest values bubble up to the top, 1 at a time
+* if next element is larger, swap. Loop until the end of collection
+* rinse & repeat until there's no swapping in that round
+* Time complexity:
+    * in general: O(n^2)
+    * nearly sorted: almost O(n) for optimized bubble sort,  O(n^2) if not so

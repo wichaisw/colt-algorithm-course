@@ -17,23 +17,27 @@ function naiveBubbleSort(arr) {
 // optimized
 function bubbleSort(arr) {
   let isSwap = false;
-  // outer loop loops from the back, cuz we'll be already know what's behind i is already sorte4d
-  for(let i = arr.length; i > 0; i--) {
-    isSwap = false;
-    for(let j = 0; j < (i - 1); j++) {
+  let counter = 0;
+  // outer loop loops from the back, cuz we'll be already know those last elements behind i is already sorted
+  // this way, we'll have fewer loop each round since we don't loop through sorted elements
+  for(let i = arr.length - 1; i > 0; i--) {
+    counter++
+    // isSwap = false;
+    console.log(`i arr[${i}]`, arr[i])
+    for(let j = 0; j < i; j++) {
       console.log(arr)
-      console.log(arr[j], arr[i-1])
+      console.log(`j arr[${j}]`, arr[j])
       if(arr[j] > arr[j + 1]) {
         // let temp = arr[j];
         // arr[j] = arr[j+1];
         // arr[j+1] = temp;
 
         [arr[j], arr[j+1]] = [arr[j+1],arr[j]]
-        isSwap = true;
+        // isSwap = true;
       }
     }
-    console.log("===========================")
-    if(!isSwap) break;
+    console.log("===========================", counter)
+    // if(!isSwap) break;
   }
 
 
@@ -42,3 +46,4 @@ function bubbleSort(arr) {
 
 
 console.log(bubbleSort([100,44,37,44,89,2,9]));
+
