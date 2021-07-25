@@ -80,7 +80,7 @@
 * use divide and conquer
 
 
-## Sorting ALgorithms
+## Basic Sorting ALgorithms (better on small data set)
 
 ### Bubble Sort
 * the largest values bubble up to the top, 1 at a time
@@ -96,8 +96,24 @@
     * in general: O(n^2)
     * nearly sorted: almost O(n) for optimized bubble sort,  O(n^2) if not so
 
-## Selection Sort
+### Selection Sort
 * compare all value, then place the smallest one to the front, rinse and repeat
 * still bad, but potentially better than bubble sort since it only swaps at the end of each loop
 * Time complexity:
     * in general: O(n^2)
+    * in best case: still O(n^2)
+
+### Insertion Sort
+* left half is always sorted (not complete tho)
+* pick the current value out then compare back to the beginning, one by one.
+* replace previous value (from the back) with its its value then move on (not swapping);
+* if current value is smaller, keep going.
+* if current value is larger, keep going until it reach the half left that's already sorted
+* if current value is smaller, but larger than next value, put current value there, hence 'inserted' in
+* works well in online algorithms where data coming in live or streaming and need to be inserted at the moment 
+* Time complexity:
+    * in general: O(n^2)
+    * nearly sorted: almost O(n) like online algorithms that got new information at the end
+
+## Better Sorting Algorithms
+### Merge Sort
