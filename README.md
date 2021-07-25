@@ -20,6 +20,7 @@
 * Insertion - depends (if it's not added to last index, whole array will need to be re-indexed)
 * Removal - depends
 * Searching - O(N)
+* Swapping - O(1)
 
 ### Big O of Array Methods
 * push - O(1)
@@ -85,6 +86,18 @@
 * the largest values bubble up to the top, 1 at a time
 * if next element is larger, swap. Loop until the end of collection
 * rinse & repeat until there's no swapping in that round
+* optimized version
+    * add a condition to break loop is that round doesn't need swapping
+    * outer loop should loops from the back, cuz we'll be already know those last elements behind i is already sorted, 
+    * this way, we'll have fewer loop each round since we don't loop through sorted elements
+    * let i = arr.length - 1; i > 0; i--
+    * let j = 0; j < i; j++
 * Time complexity:
     * in general: O(n^2)
     * nearly sorted: almost O(n) for optimized bubble sort,  O(n^2) if not so
+
+## Selection Sort
+* compare all value, then place the smallest one to the front, rinse and repeat
+* still bad, but potentially better than bubble sort since it only swaps at the end of each loop
+* Time complexity:
+    * in general: O(n^2)

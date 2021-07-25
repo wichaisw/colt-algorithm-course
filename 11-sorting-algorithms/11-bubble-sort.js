@@ -33,11 +33,11 @@ function bubbleSort(arr) {
         // arr[j+1] = temp;
 
         [arr[j], arr[j+1]] = [arr[j+1],arr[j]]
-        // isSwap = true;
+        isSwap = true;
       }
     }
     console.log("===========================", counter)
-    // if(!isSwap) break;
+    if(!isSwap) break;
   }
 
 
