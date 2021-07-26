@@ -117,3 +117,9 @@
 
 ## Better Sorting Algorithms
 ### Merge Sort
+* exploit the face that 1 element (arrays of 0) is always sorted
+* divide & conquer by 
+    * repeatedly split an array until each one has only 1 element
+    * merge them back into sorted 2 elements arrays
+    * merge 2 element sorted arrays by comparing first item with another first item, the second with another second one.
+    * merge & sort 2 sorted arrays together with 2 pointers for each array's length
