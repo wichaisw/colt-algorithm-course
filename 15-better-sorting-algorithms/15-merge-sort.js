@@ -8,9 +8,7 @@ function myMerge(arr1, arr2) {
     if(arr1[i] <= arr2[j] || j >= arr2.length) {
       sortedArray.push(arr1[i]);
       i++;
-    }
-
-    if(arr2[j] < arr1[i] || i >= arr1.length) {
+    } else {
       sortedArray.push(arr2[j]);
       j++;
     }
@@ -51,4 +49,4 @@ function merge(arr1, arr2) {
   return results;
 }
 
-console.log(merge([1,10,50], [2,14,99,100]))
+console.log(merge([5, 12, 22, 23, 34, 67, 90, 109],  [-65, -4, -1, 1, 3, 6, 20, 34, 34, 55, 78, 90]))
