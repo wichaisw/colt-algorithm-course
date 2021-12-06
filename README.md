@@ -59,7 +59,6 @@
         * track of a subset of data in an array/string etc, such as finding the longest unique subset of an array
         * things we iterate over sequentially, like contiguous sequence of elements
         * minimum/maximum of something, shortest/longest of something, contained something
-
 * Divide & Conquer
     * divide a data set into smaller chunks, repeat a process with a subset of data
     * must be sorted
@@ -119,7 +118,6 @@
 ### Merge Sort
 * exploit the face that 1 element (arrays of 0) is always sorted
 * divide & conquer by 
-    * repeatedly split an array until each one has only 1 element
-    * merge them back into sorted 2 elements arrays
-    * merge 2 element sorted arrays by comparing first item with another first item, the second with another second one.
-    * merge & sort 2 sorted arrays together with 2 pointers for each array's length
+    * repeatedly break arrays into halves until each one is empty or has one element, do this recursively
+    * merge sorted arrays back together with merge function 
+        * merge & sort 2 sorted arrays together with 2 pointers for each array's length
