@@ -77,9 +77,17 @@
 * eliminates half of the remaining elements at at time
 * only works on 'sorted' arrays
 * use divide and conquer
+* implementation
+    1. Accept a sorted array and a value.
+    2. Create a left pointer at the start of the array, and a right array at the end of the array.
+    3. While the left pointer comes before the right pointer:
+        * create a pointer at the middle.
+        * if the wanted value is found, return the index.
+        * if the value is too small move left pointer up.
+        * if the value is too large move the right pointer down.
+    4. return -1 if the value isn't found.
 
-
-## Basic Sorting ALgorithms (better on small data set)
+## Basic Sorting Algorithms (better on small data set)
 
 ### Bubble Sort
 * the largest values bubble up to the top, 1 at a time
@@ -116,8 +124,20 @@
 
 ## Better Sorting Algorithms
 ### Merge Sort
-* exploit the face that 1 element (arrays of 0) is always sorted
+* exploit the fact that 1 element (arrays of 0) is always sorted.
 * divide & conquer by 
-    * repeatedly break arrays into halves until each one is empty or has one element, do this recursively
-    * merge sorted arrays back together with merge function 
-        * merge & sort 2 sorted arrays together with 2 pointers for each array's length
+    1. repeatedly break arrays into halves until each one is empty or has one element, do this recursively.
+        * break point: return early if having 0-1 member.
+    2. merge sorted arrays back together with merge function.
+        * merge & sort 2 sorted arrays together with 2 pointers for each array's length.
+* merge helper implementation:
+    1. Create empty array, look at the smallest values in each input array (using multiple pointer).
+    2. Loop until pointer exceeds the any array length.
+    3. Push leftover members, since it's sorted, to the result array (do it for both array since we didn't check which array is larger).
+* Time complexity:
+    * best, average, worst, : O(n log n)
+    * O(log n) for decomposition * O(n) for comparing in merging.
+    * best sorting algorithm if data doesn't any have specific quirk or characteristic.
+* Space Complexity:
+    * O(n)
+    * Larger array need more space to store sub arrays.

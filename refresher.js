@@ -66,6 +66,29 @@ function maxSubArraySum(arr, num) {
   return max;
 }
 
-console.log(maxSubArraySum([2,6,9,2,1,8,5,6,3], 3))
+// console.log(maxSubArraySum([2,6,9,2,1,8,5,6,3], 3))
 // console.log(maxSubArraySum([1,2,5,2,8,1,5],4))
 // console.log(maxSubArraySum([1,2,5,2,8,1,5],2))
+
+function binarySearch(arr, num) {
+  let left = 0;
+  let right = arr.length - 1;
+  let middle;
+
+  // loop until each pointer intercept
+  while(left <= right) {
+    middle = Math.round((left + right) / 2);
+    if(arr[middle] === num) return middle;
+
+    // check if the middle value is lesser or higher than the target value
+    if(num < arr[middle]) {
+      right = middle - 1;
+    } else {
+      left = middle + 1;
+    }
+  }
+
+  return -1;
+}
+
+console.log(binarySearch([-65, -4, -1, 1, 3, 6, 20, 34, 34, 55, 78, 90], 34))
