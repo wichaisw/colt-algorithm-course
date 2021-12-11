@@ -124,13 +124,13 @@
 
 ## Better Sorting Algorithms
 ### Merge Sort
-* exploit the fact that 1 element (arrays of 0) is always sorted.
-* divide & conquer by 
+* Exploit the fact that 1 element (arrays of 0) is always sorted.
+* Divide & conquer by 
     1. repeatedly break arrays into halves until each one is empty or has one element, do this recursively.
         * break point: return early if having 0-1 member.
     2. merge sorted arrays back together with merge function.
         * merge & sort 2 sorted arrays together with 2 pointers for each array's length.
-* merge helper implementation:
+* Merge helper implementation:
     1. Create empty array, look at the smallest values in each input array (using multiple pointer).
     2. Loop until pointer exceeds the any array length.
     3. Push leftover members, since it's sorted, to the result array (do it for both array since we didn't check which array is larger).
@@ -141,3 +141,53 @@
 * Space Complexity:
     * O(n)
     * Larger array need more space to store sub arrays.
+
+### Quick Sort
+* Use Pivot to recursively rearrange lesser values to the right side of it and the greater values to the right side of it.
+* The runtime of quick sort depends on where you pick the pivot.
+* Ideally, the pivot should be chosen so that it's roughly the median value in the data set.
+    * But For simplicity sake, we mostly choose the first element to be the pivot (we don't know where the median value is).
+* Pivot helper implementation:
+    1. Accept 3 arguments: an array, a start index, an end index.
+    2. Designate an element in the array as a pivot (can be the start of the array).
+    3. Store the current pivot index in a variable.
+    4. Loop through the array and rearrange elements so that all values lesser than the pivot is moved to the left of it, likewise for the right side.
+        * if the 'pivot value' is greater than the current element, increment the 'pivot index variable' and swap the current element with the element in the pivot index.
+        * it shouldn't create a new array.
+        * the moved elements doesn't need to be sorted among themselves.
+    5. Swap the starting element (the old pivot) with the pivot index.
+    6. Return the index of the pivot.
+* Quick sort implementation:
+    1. Accept arr, left, and right for later use in recursion (pass it to itself and the pivot helper).
+    2. Recursively call the pivot helper on the subarray to the left of updated pivot index, likewise for the right side of the index.
+    3. The base case occurs when considering a subarray with less than 2 elements (recursively call only when left < right).
+* Time Complexity:
+    * Best, Average: O(n log n).
+    * Worst: O(n^2).
+    * O(log n) decomposition (when breaking an array into subarrays) * O(n) comparison per decomposition.
+    * If the array is already sorted (and we take the first element as the pivot), we will recursively decompose the array (minus one element) again & again, hence O(n^2).
+* Space Complexity:
+    * O(log n).
+
+### Radix Sort
+* Unlike previous sorting algorithms, which are comparison sort. Radix doesn't make direct comparison.
+* Only works with specific quirk, in this case, it only works on numbers.
+* Exploits the fact that information about size of a number is encoded in the number of digits.
+* Compare each digit instead of the whole values.
+* Implementation:
+    1. Create 3 helper functions:
+        1. getDigit helper uses math knowledge (floor and modula)
+        2. digitCount helper figures out the largest number of digit in the array.
+        3. mostDigits helper returns the number of digits in the largest numbers in the list (using digitCount).
+    2. Define a function that accepts list of numbers.
+    3. Figure out how many digits the largest number has (mostDigits helper).
+    4. Loop from k = 0 to this largest number of digits, for each iteration of this loop:
+        1. Create buckets for each digits (array that has 10 subarrays 0-9).
+        2. Place each number in the corresponding bucket based on its kth digit.
+    5. Replace existing array with values in the buckets (concatenated subarrays) in each outer loop.
+    6. return bucket list in the end
+* Time Complexity:
+    * Best, Average, Worst: O(nk).
+    * n = length of array, k = number of digits
+* Space Complexity:
+    * O(n + k).
