@@ -1,4 +1,4 @@
-let unsortedArr = [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29];
+let unsortedNumArr = [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29];
 
 // ANCHOR getDigit helper
 // first attempt
@@ -37,3 +37,42 @@ function mostDigits(nums) {
   return maxDigits;
 }
 
+// ANCHOR Radix Sort
+// first attempt
+function myRadixSort(arr) {
+  const maxDigit = mostDigits(arr);
+  
+  for(let k = 0; k < maxDigit; k++) {
+    let buckets = [[],[],[],[],[],[],[],[],[],[]];
+    for(let i = 0; i < arr.length; i++) {
+      let digit = getDigit(arr[i], k);
+      buckets[digit].push(arr[i]) 
+    }
+
+    arr = [];
+    for(let j = 0; j < buckets.length; j++) {
+      arr = arr.concat(buckets[j]);
+    }
+  } 
+
+  return arr;
+}
+
+// Colt's Radix Sort
+function radixSort(nums) {
+  const maxDigitCount = mostDigits(nums);
+
+  for(let k = 0; k < maxDigitCount; k++) {
+    let digitBuckets = Array.from({length: 10}, () => []);
+    for(let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k);
+      digitBuckets[digit].push(nums[i]);
+    }
+    
+    nums = [].concat(...digitBuckets);
+  }
+
+  return nums;
+}
+
+console.log(radixSort(unsortedNumArr));
