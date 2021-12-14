@@ -21,10 +21,18 @@ class SinglyLinkedList {
     this.tail = null;
   }
 
+  // traverse() {
+  //   let current = this.head;
+  //   while(current) {
+  //     console.log(current.val)
+  //     current = current.next;
+  //   }
+  // }
+
   push(val) {
     const newNode = new Node(val);
 
-    // first element case
+    // first node case
     if(!this.head) {
       this.head = newNode;
       this.tail = this.head;  
@@ -38,6 +46,29 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  pop() {
+    // if have no node
+    if(!this.head) return undefined;
+
+    let currentNode = this.head;
+    let newTail = currentNode;
+    while(currentNode.next) {
+      newTail = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if(this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+
+    return currentNode;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -46,5 +77,13 @@ list.push('hello')
 list.push('there')
 list.push('goodbye')
 list.push(1)
-console.log(list.push(2))
+list.push(2)
 
+
+list.pop()
+list.pop()
+list.pop()
+list.pop()
+list.pop()
+
+console.log(list)
