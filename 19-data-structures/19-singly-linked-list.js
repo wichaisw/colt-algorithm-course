@@ -69,6 +69,24 @@ class SinglyLinkedList {
 
     return currentNode;
   }
+  
+  shift() {
+    if(!this.head) return undefined;
+    
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+
+    if(this.length === 0) {
+      this.tail = null;
+    }
+
+    return currentHead;
+  }
+
+  unshift() {
+
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -79,11 +97,10 @@ list.push('goodbye')
 list.push(1)
 list.push(2)
 
-
-list.pop()
-list.pop()
-list.pop()
-list.pop()
-list.pop()
+list.shift();
+list.shift();
+list.shift();
+list.shift();
+list.shift();
 
 console.log(list)
