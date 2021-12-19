@@ -20,9 +20,9 @@
     - [Quick Sort](#quick-sort)
     - [Radix Sort](#radix-sort)
 - [Data Structures](#data-structures)
-    - [Singled Linked List](#singled-link-list)
-
-## <a id="#big-o"></a>Big O
+    - [Singly Linked List](#singly-link-list)
+    - 
+## Big O
 
 ### Big O of Objects
 * Access - O(1)
@@ -63,7 +63,7 @@
         * for small arrays (up to 10 elements) time complexity: O(n^2) | space complexity: O(1).
         * for larger arrays, time complexity:  Θ(n log(n)) (average case) | space complexity is O(log(n))
 
-## <a id="#problem-solving-patterns"></a>Problem Solving Patterns
+## Problem Solving Patterns
 * Frequency Counter 
     * create objects as dictionaries to count occurrence of each members. The keys are members' representative, the values are occurrences;
     * suitable for counting / searching for unique members
@@ -87,15 +87,15 @@
     * tremendously decrease time complexity
     * i.e. quick search, merge sort, binary-search, 
 
-## <a id="#recursive-function"></a>Recursive Function
+## Recursive Function
 * function that repeatedly calls itself
 * need base case to stop, normally with a return keyword
 * repeat with different input
 * i.e. DOM travel, open nested folders
 * for arrays, use slice, spread operator, concat to not mutate the. For strings, use slice, substr, or substring
 
-## <a id="#searching-algorithms"></a>Searching Algorithms
-### <a id="#binary-search"></a>Binary Search
+## Searching Algorithms
+### Binary Search
 * eliminates half of the remaining elements at at time
 * only works on 'sorted' arrays
 * use divide and conquer
@@ -109,9 +109,9 @@
         * if the value is too large move the right pointer down.
     4. return -1 if the value isn't found.
 
-## <a id="#basic-sorting-algorithms"></a>Basic Sorting Algorithms (better on small data set)
+## <a name="#basic-sorting-algorithms">Basic Sorting Algorithms (better on small data set)</a>
 
-### <a id="#bubble-sort"></a>Bubble Sort
+### Bubble Sort
 * the largest values bubble up to the top, 1 at a time
 * if next element is larger, swap. Loop until the end of collection
 * rinse & repeat until there's no swapping in that round
@@ -125,14 +125,14 @@
     * in general: O(n^2)
     * nearly sorted: almost O(n) for optimized bubble sort,  O(n^2) if not so
 
-### <a id="#selection-sort"></a>Selection Sort
+### Selection Sort
 * compare all value, then place the smallest one to the front, rinse and repeat
 * still bad, but potentially better than bubble sort since it only swaps at the end of each loop
 * Time complexity:
     * in general: O(n^2)
     * in best case: still O(n^2)
 
-### <a id="#insertion-sort"></a>Insertion Sort
+### Insertion Sort
 * left half is always sorted (not complete tho)
 * pick the current value out then compare back to the beginning, one by one.
 * replace previous value (from the back) with its its value then move on (not swapping);
@@ -144,8 +144,8 @@
     * in general: O(n^2)
     * nearly sorted: almost O(n) like online algorithms that got new information at the end
 
-## <a id="#better-sorting-algorithms"></a>Better Sorting Algorithms
-### <a id="#merge-sort"></a>Merge Sort
+## Better Sorting Algorithms
+### Merge Sort
 * Exploit the fact that 1 element (arrays of 0) is always sorted.
 * Divide & conquer by 
     1. repeatedly break arrays into halves until each one is empty or has one element, do this recursively.
@@ -164,7 +164,7 @@
     * O(n)
     * Larger array need more space to store sub arrays.
 
-### <a id="#quick-sort"></a>Quick Sort
+### Quick Sort
 * Use Pivot to recursively rearrange lesser values to the right side of it and the greater values to the right side of it.
 * The runtime of quick sort depends on where you pick the pivot.
 * Ideally, the pivot should be chosen so that it's roughly the median value in the data set.
@@ -191,7 +191,7 @@
 * Space Complexity:
     * O(log n).
 
-### <a id="#radix-sort"></a>Radix Sort
+### Radix Sort
 * Unlike previous sorting algorithms, which are comparison sort. Radix doesn't make direct comparison.
 * Only works with specific quirk, in this case, it only works on numbers.
 * Exploits the fact that information about size of a number is encoded in the number of digits.
@@ -215,7 +215,38 @@
     * O(n + k).
 
 
-## <a id="#data-structures"></a>Data Structures
+## Data Structures
 
-### <a id="#singled-linked-list"></a>
+### Singly Link List
+- A linked list of nodes that point to the next node.
+- Doesn't have index, unlike array.
+- Pros: good for adding and removing member, because it doesn't have re-index the whole array.
+- Cons: have to travel the whole list, can't access by index.
+- Time Complexity:
+    - push, pop, shift, unshift: O(1)
+- Implementation
+    - Node class: val, next
+    - SinglyLinkedList class: head, tail, length
+    - push():
+        1. Accept a Value
+        2. Create a new node with the value
+        3. if there is no head property on the list, set the head & tail to be the newly created node
+        4. otherwise set the next property on the tail to be the new node, and set the tail property on the list to be the newly created node.
+        5. increment the length by one.
+        6. return the linked list
+    - pop()
+        1. If there is no nodes in the list, return undefined.
+        2. Loop through the list until reaching the tail.
+        3. Set the next property of second to last node to be null.
+        4. Set the tail to be the 2nd to last node.
+        5. Decrement the length of the list by 1.
+        6. Return the value of the node removed.
+    - shift()
+        1. If there are no nodes, return undefined.
+        2. Store the current head property in variable.
+        3. Set the head property to be the current head's next property.
+        4. Decrement the length by 1.
+        5. Return the value of the removed node.
+
+
 
