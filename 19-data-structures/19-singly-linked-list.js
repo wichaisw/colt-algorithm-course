@@ -84,8 +84,20 @@ class SinglyLinkedList {
     return currentHead;
   }
 
-  unshift() {
+  unshift(val) {
+    const newNode = new Node(val);
 
+    if(!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    
+    this.length++;
+
+    return this;
   }
 }
 
@@ -97,10 +109,6 @@ list.push('goodbye')
 list.push(1)
 list.push(2)
 
-list.shift();
-list.shift();
-list.shift();
-list.shift();
-list.shift();
+list.unshift('test')
 
 console.log(list)

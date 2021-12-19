@@ -247,6 +247,14 @@
         3. Set the head property to be the current head's next property.
         4. Decrement the length by 1.
         5. Return the value of the removed node.
+    - unshift()
+        1. Accept a value.
+        2. Create a new node using the value.
+        3. If there is no head on the list, set the head and tail to be the newly created node.
+        4. Otherwise set the new node's next property to be the current head property on the list.
+        5. Set the head property on the list to be the newly created node.
+        6. Increment the length by 1.
+        7. Return the linked list.
 
 
 
