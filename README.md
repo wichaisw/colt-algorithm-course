@@ -23,6 +23,10 @@
     - [Singly Linked List](#singly-link-list)
     - 
 ## Big O
+- constant time: O(1)
+- logarithmic time: O(log n)
+- linear time: O(n)
+- quadratic time: O(n^2)
 
 ### Big O of Objects
 * Access - O(1)
@@ -220,41 +224,34 @@
 ### Singly Link List
 - A linked list of nodes that point to the next node.
 - Doesn't have index, unlike array.
-- Pros: good for adding and removing member, because it doesn't have re-index the whole array.
-- Cons: have to travel the whole list, can't access by index.
+- It's a foundation for Stacks & Queues data structure.
+- Pros: Good for adding and removing member at the beginning, because it doesn't have re-index the whole array.
+- Cons: Have to travel the whole list, can't access by index. Not suitable for random accessing.
 - Time Complexity:
-    - push, pop, shift, unshift: O(1)
+    - Insertion: O(1)
+      - push, unshift: O(1)
+      - insert: use get, so O(n)
+    - Removal: O(1) or O(n)
+      - shift: O(1)
+      - pop: O(n) 
+      - remove: use get, so O(n)
+    - Searching: O(n)
+    - Access: O(n)
 - Implementation
     - Node class: val, next
     - SinglyLinkedList class: head, tail, length
-    - push():
-        1. Accept a Value
-        2. Create a new node with the value
-        3. if there is no head property on the list, set the head & tail to be the newly created node
-        4. otherwise set the next property on the tail to be the new node, and set the tail property on the list to be the newly created node.
-        5. increment the length by one.
-        6. return the linked list
-    - pop()
-        1. If there is no nodes in the list, return undefined.
-        2. Loop through the list until reaching the tail.
-        3. Set the next property of second to last node to be null.
-        4. Set the tail to be the 2nd to last node.
-        5. Decrement the length of the list by 1.
-        6. Return the value of the node removed.
-    - shift()
-        1. If there are no nodes, return undefined.
-        2. Store the current head property in variable.
-        3. Set the head property to be the current head's next property.
-        4. Decrement the length by 1.
-        5. Return the value of the removed node.
-    - unshift()
-        1. Accept a value.
-        2. Create a new node using the value.
-        3. If there is no head on the list, set the head and tail to be the newly created node.
-        4. Otherwise set the new node's next property to be the current head property on the list.
-        5. Set the head property on the list to be the newly created node.
-        6. Increment the length by 1.
-        7. Return the linked list.
+    - methods:
+        - push
+        - pop
+        - shift
+        - unshift
+        - get
+        - set
+        - insert
+        - remove
+        - reverse (for practice)
+        - print / traverse (for method checking)
+
 
 
 
