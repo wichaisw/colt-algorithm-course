@@ -99,6 +99,31 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  get(index) {
+    if(index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while(counter !== index) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
+
+  set(index, val) {
+    let foundNode = this.get(index);
+
+    if(foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+
+    return false;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -111,4 +136,7 @@ list.push(2)
 
 list.unshift('test')
 
-console.log(list)
+// console.log(list)
+console.log(list.get(1))
+console.log(list.set(1, "second"))
+console.log(list.get(1))
