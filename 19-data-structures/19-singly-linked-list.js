@@ -21,13 +21,13 @@ class SinglyLinkedList {
     this.tail = null;
   }
 
-  traverse() {
-    let current = this.head;
-    while(current) {
-      console.log('val: ', current.val)
-      current = current.next;
-    }
-  }
+  // traverse() {
+  //   let current = this.head;
+  //   while(current) {
+  //     console.log('val: ', current.val)
+  //     current = current.next;
+  //   }
+  // }
 
   push(val) {
     const newNode = new Node(val);
@@ -153,15 +153,41 @@ class SinglyLinkedList {
 
     return removedNode;
   }
+
+  reverse() {
+    let current = this.head;
+    this.head = this.tail;
+    this.tail = current;
+    let next;
+    let prev = null; // next of tail should be null
+    
+    for(let i = 0; i < this.length; i++) {
+      next = current.next; // hold current next
+      current.next = prev; // point current.ndext to value from previous loop
+      prev = current; // store prev for next round
+      current = next; // move to next node
+    }
+
+    return this;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while(current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr)
+  }
 }
 
 let list = new SinglyLinkedList();
 
-list.push('hello')
-list.push('there')
-list.push('goodbye')
 list.push(1)
 list.push(2)
+list.push(3)
+list.push(4)
 
 list.unshift('test')
 
@@ -169,9 +195,11 @@ list.unshift('test')
 // console.log(list.set(1, "second"))
 // console.log(list.get(1))
 
-list.insert(2,'new second')
-list.insert(2,'new second2')
-list.traverse();
-console.log('----------------------')
-list.remove(2)
-list.traverse();
+// list.insert(2,'new second')
+// list.insert(2,'new second2')
+// list.traverse();
+// console.log('----------------------')
+// list.remove(2)
+list.print();
+list.reverse();
+list.print();
