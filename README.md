@@ -69,13 +69,13 @@
 
 ## Problem Solving Patterns
 * Frequency Counter 
-    * create objects as dictionaries to count occurrence of each members. The keys are members' representative, the values are occurrences;
+    * create objects as dictionaries to count occurrences of each member. The keys are members' representative, the values are occurrences;
     * suitable for counting / searching for unique members
 * Multiple Pointers
     * must use with sorted members, like a sorted number array
     * create pointers correspond to position like index
     * one might moves towards the end and another might moves toward the beginning, or even start in the middle, it's depends
-    * suitable to count unique values, find duplicate, or get result of specific members that go through some operation
+    * suitable to count unique values, find duplicate, find a specific pair, or get result of specific members that go through some operation
 * Sliding Window
     * create a window (array or number) from one position to another
     * the window might be a sum of number or string
@@ -100,7 +100,7 @@
 
 ## Searching Algorithms
 ### Binary Search
-* eliminates half of the remaining elements at at time
+* eliminates half of the remaining elements at a time
 * only works on 'sorted' arrays
 * use divide and conquer
 * implementation
@@ -139,7 +139,7 @@
 ### Insertion Sort
 * left half is always sorted (not complete tho)
 * pick the current value out then compare back to the beginning, one by one.
-* replace previous value (from the back) with its its value then move on (not swapping);
+* replace previous value (from the back) with its value then move on (not swapping);
 * if current value is smaller, keep going.
 * if current value is larger, keep going until it reach the half left that's already sorted
 * if current value is smaller, but larger than next value, put current value there, hence 'inserted' in
@@ -158,7 +158,7 @@
         * merge & sort 2 sorted arrays together with 2 pointers for each array's length.
 * Merge helper implementation:
     1. Create empty array, look at the smallest values in each input array (using multiple pointer).
-    2. Loop until pointer exceeds the any array length.
+    2. Loop until the pointer exceeds any array length.
     3. Push leftover members, since it's sorted, to the result array (do it for both array since we didn't check which array is larger).
 * Time complexity:
     * best, average, worst, : O(n log n)
@@ -169,7 +169,7 @@
     * Larger array need more space to store sub arrays.
 
 ### Quick Sort
-* Use Pivot to recursively rearrange lesser values to the right side of it and the greater values to the right side of it.
+* Use Pivot to recursively rearrange lesser values to the left side of it and the greater values to the right side of it.
 * The runtime of quick sort depends on where you pick the pivot.
 * Ideally, the pivot should be chosen so that it's roughly the median value in the data set.
     * But For simplicity sake, we mostly choose the first element to be the pivot (we don't know where the median value is).
@@ -180,7 +180,7 @@
     4. Loop through the array and rearrange elements so that all values lesser than the pivot is moved to the left of it, likewise for the right side.
         * if the 'pivot value' is greater than the current element, increment the 'pivot index variable' and swap the current element with the element in the pivot index.
         * it shouldn't create a new array.
-        * the moved elements doesn't need to be sorted among themselves.
+        * the moved elements don't need to be sorted among themselves.
     5. Swap the starting element (the old pivot) with the pivot index.
     6. Return the index of the pivot.
 * Quick sort implementation:
@@ -225,7 +225,7 @@
 - A linked list of nodes that point to the next node.
 - Doesn't have index, unlike array.
 - It's a foundation for Stacks & Queues data structure.
-- Pros: Good for adding and removing member at the beginning, because it doesn't have re-index the whole array.
+- Pros: Good for adding and removing member at the beginning, because it doesn't have to re-index the whole array.
 - Cons: Have to travel the whole list, can't access by index. Not suitable for random accessing.
 - Time Complexity:
     - Insertion: O(1)
