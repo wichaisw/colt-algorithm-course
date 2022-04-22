@@ -19,7 +19,7 @@ class Stack {
       this.first = newNode;
       this.last = newNode;
     } else {
-      // treat singly linked list head as last to acheive O(1) pop and push
+      // treat singly linked list head as last to achieve O(1) pop and push
       let temp = this.first;
       this.first = newNode;
       this.first.next = temp;

@@ -21,7 +21,10 @@
     - [Radix Sort](#radix-sort)
 - [Data Structures](#data-structures)
     - [Singly Linked List](#singly-link-list)
-    - [Doubly Linked List](#doubly-linked-list)]
+    - [Doubly Linked List](#doubly-linked-list)
+    - [Stack](#stack)
+    - [Queue](#queue)
+    - [Binary Search Trees](#binary-search-trees)
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -274,8 +277,11 @@
 ### Stack
 - LIFO (last in first out).
 - Prioritize insertion and removal.
-- Achieve O(1) push & pop by treating Singly Linked List's head as its last.
+- Are foundational for more complex data structures.
 - i.e. undo & redo, managing function invocation, routing (the history object forward & backward).
+- Singly-linked-list-based stack;
+    - treat singly linked list head as its last to achieve O(1) pop and push
+    - add from the beginning and remove from the beginning to achieve O(1) insertion & removal.
 - Time Complexity:
     - Insertion: O(1)
     - Removal: O(1)
@@ -284,3 +290,16 @@
 
 ### Queue
 - FIFO (first in first out).
+- Prioritize insertion and removal.
+- Useful for processing tasks and are foundational for more complex data structures.
+- i.e. background tasks, uploading resource, printing / task processing.
+- Singly-linked-list-based queue;
+    add from the end and remove from the beginning to achieve O(1) insertion & removal.
+- Time Complexity:
+    - Insertion: O(1)
+    - Removal: O(1)
+    - Searching: O(n)
+    - Access: O(n)
+
+### Binary Search Trees
+- 
