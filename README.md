@@ -271,4 +271,16 @@
     - Access: O(n)
         - (actually O(n/2) which is better than singly liked list)
 
+### Stack
+- LIFO (last in first out).
+- Prioritize insertion and removal.
+- Achieve O(1) push & pop by treating Singly Linked List's head as its last.
+- i.e. undo & redo, managing function invocation, routing (the history object forward & backward).
+- Time Complexity:
+    - Insertion: O(1)
+    - Removal: O(1)
+    - Searching: O(n)
+    - Access: O(n)
 
+### Queue
+- FIFO (first in first out).
