@@ -21,7 +21,7 @@
     - [Radix Sort](#radix-sort)
 - [Data Structures](#data-structures)
     - [Singly Linked List](#singly-link-list)
-    - 
+    - [Doubly Linked List](#doubly-linked-list)]
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -252,10 +252,23 @@
         - reverse (for practice)
         - print / traverse (for method checking)
 
-### Doubly Link List
+### Doubly Linked List
 - Almost identical to Singly Linked Lists, except every node has another pointer to the 'previous' node.
 - Can access backward from the last node, easier to reverse.
-- Use more memory as a tradeoff for more flexibility.
-
+- Hence can access and find a specific node in half the time.
+- Use more memory (extra pointer) as a tradeoff for more flexibility.
+- Time Complexity:
+    - Insertion: O(1)
+      - push, unshift: O(1)
+      - insert: use get, so O(n)
+    - Removal: O(1) or O(n)
+      - shift: O(1)
+      - pop: O(1) 
+      - (can access tail directly)
+      - remove: use get, so O(n)
+    - Searching: O(n) 
+        - (actually O(n/2) which is better than singly liked list)
+    - Access: O(n)
+        - (actually O(n/2) which is better than singly liked list)
 
 
