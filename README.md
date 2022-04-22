@@ -242,7 +242,7 @@
     - SinglyLinkedList class: head, tail, length
     - methods:
         - push
-        - pop
+        - pop (have to traverse through the whole list)
         - shift
         - unshift
         - get
@@ -252,6 +252,10 @@
         - reverse (for practice)
         - print / traverse (for method checking)
 
+### Doubly Link List
+- Almost identical to Singly Linked Lists, except every node has another pointer to the 'previous' node.
+- Can access backward from the last node, easier to reverse.
+- Use more memory as a tradeoff for more flexibility.
 
 
 
