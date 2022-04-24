@@ -302,4 +302,35 @@
     - Access: O(n)
 
 ### Binary Search Trees
-- 
+- Tree:
+    - Consists of nodes in a parent-child relationship (branching).
+    - Nonlinear, unlike lists. 
+    - Won't point back toward siblings or parents, unlike graph.
+    - Only have one Root: top node in a tree.
+    - Child: a node directly connected to another node when moving away from the root
+    - Parent: the converse notion of a child..
+    - Siblings: a group of nodes with the same parent.
+    - Leaf: a node with no children.
+    - Edge: the connection between one node and another (a connecting arrow).
+    - Use cases:
+        - HTML DOM
+        - Network routing
+        - Abstract syntax tree
+        - Artificial Intelligence
+        - Folders in operating systems
+        - JSON
+- Binary Trees
+    - Only have two children per node at most.
+- Binary Search Trees (BSTs)
+    - Every parent node has at most 2 children.
+    - Sorted in some ways i.e. smaller value located to the left, greater value located to the right side of the parent.
+    - Inserting duplication can be handled in multiple ways:
+        - don't allow duplication (return undefined in case of inserting duplicate value).
+        - put it on the right or left side.
+        - have frequency counter in the tree's node and increment it when duplication is inserted.
+    - Time Complexity:
+        - Insertion: O(log n)
+        - Searching: O(log n)
+        - O(log N) is the number of the tree's levels.
+        - Some unbalanced BST could result in worse time complexity, O(n).
+        
