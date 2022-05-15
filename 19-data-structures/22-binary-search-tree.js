@@ -84,7 +84,7 @@ class BinarySearchTree {
 
   // ANCHOR Breadth First Search
   BFS() {
-    // use arra queue for simplicity purpose
+    // use array queue for simplicity purpose
     const data = [], queue = [];
     let node = this.root;
 
@@ -99,6 +99,29 @@ class BinarySearchTree {
 
     return data;
   }
+
+  // ANCHOR Depth First Search: PreOrder
+  DFSPreOrder() {
+    const data = [];
+    let current = this.root;
+    
+    // recursively calls helper
+    function traverse(node) {
+      data.push(node.value);
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+    }
+    traverse(current);
+
+    return data;
+  }
+  // DFSPreOrder(node = this.root) {
+  //   if(node) {
+  //     console.log(node.value);
+  //     this.DFSPreOrder(node.left);
+  //     this.DFSPreOrder(node.right);
+  //   }
+  // }
 }
 
 const tree = new BinarySearchTree();
@@ -109,4 +132,4 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-console.log(tree.BFS());
+console.log(tree.DFSPreOrder());
