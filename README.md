@@ -25,6 +25,7 @@
     - [Stack](#stack)
     - [Queue](#queue)
     - [Binary Search Trees](#binary-search-trees)
+    - [Tree Traversal](#tree-traversal)
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -333,4 +334,20 @@
         - Searching: O(log n)
         - O(log N) is the number of the tree's levels.
         - Some unbalanced BST could result in worse time complexity, O(n).
-        
+
+### Tree Traversal
+- Not exclusive to binary search tree (we didn't know if it's sorted accordingly).
+- Breadth-first Search (top-down level by level)
+- Depth-first Search
+    - PreOrder (root > left > right)
+    - PostOrder (left > right > root)
+    - InOrder (left > root > right)
+- For wider tree, BFS takes too much space complexity, DFS has fewer nodes to keep track of.
+- BFS is suitable for a heavily unbalance tree (deep long tree), DFS will have to go too deep and keep above levels hanging on the memory stack hence having more space complexity.
+- DFS InOrder 
+    - in Binary Search Tree (sorted) will get all the values in its order.
+- DFS PreOrder
+    - useful for duplicating the tree i.e. store the tree's value in serialized order in db so that it is easily reconstructed (rehydrated) later.
+- DFS PostOrder
+    - used to delete the tree.
+
