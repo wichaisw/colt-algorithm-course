@@ -26,6 +26,7 @@
     - [Queue](#queue)
     - [Binary Search Trees](#binary-search-trees)
     - [Tree Traversal](#tree-traversal)
+    - [Binary Heaps](#binary-heaps)
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -351,3 +352,23 @@
 - DFS PostOrder
     - used to delete the tree.
 
+### Binary Heaps
+- a complete binary tree (totally filled other than the rightmost elements on the last level).
+- left children are always filled out first.
+- no order between sibling nodes.
+- children of a parent are stored at index 2n+1 & 2n+2, when n is index of the parent.
+- likewise, for any child node at index n, its parents is at index (n-1)/2 (floored).
+- Max-Heaps: each node is smaller than its parents (root is max).
+    - insert: compare the inserted element with its parent, swap if its value is greater than parent's (bubble up). Continue until its value is less than parent's.
+    - extract: swap the first value with the last one then cascade down until neither child is larger than the value. If both left and right children is larger, swap with the largest child.
+- Min-Heaps: each node is larger than its parents (root is min).
+    - insert: bubble up the same way as Max-Heaps, but swap when the inserted value is less than parent's value.
+    - extract: cascade down in the same fashion as Max-Heaps, but swap with a smaller value.
+- useful for sorting & implementing other data structure like priority queues.
+- Use Cases:
+    - priority queue or schedulers.
+    - find the kth smallest or largest element in an array.
+- Time Complexity:
+    - Insertion: O(log N)
+    - Removal: O(log N)
+    - Search: O(N)
