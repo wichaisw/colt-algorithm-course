@@ -27,6 +27,7 @@
     - [Binary Search Trees](#binary-search-trees)
     - [Tree Traversal](#tree-traversal)
     - [Binary Heaps](#binary-heaps)
+    - [Hash Tables](#hash-tables)
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -372,3 +373,20 @@
     - Insertion: O(log N)
     - Removal: O(log N)
     - Search: O(N)
+
+### Hash Tables
+- Hash tables are collections of key-value pairs.
+- Can find values quickly given a key.
+- Store data in a large array, and work by hashing the keys.
+- Put key in hash function then treats the result as an array's index.
+- A good hash should be fast, distribute keys uniformly, and be deterministic.
+- Handling collision in hash function:
+    - Separate chaining
+        - At each index, store values in other data structure like array or linked-list, then check the key with each member in its.
+    - Linear Probing
+        - When we find a collision, search through the array to find the next empty slot.
+        - Allows us to store a single key-value at each index, but have limited slot.
+- Time Complexity:
+    - Insert: O(1)
+    - Deletion: O(1)
+    - Access: O(1)
