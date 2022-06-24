@@ -1,26 +1,27 @@
 # colt-algorithm-course
 
 ## Contents
-- [Big O](#big-o)
-    - Big O of Objects
-    - Big O of Object Methods
-    - Big O of Arrays
-    - Big O of Array Methods
-- [Problem Solving Patterns](#problem-solving-patterns)
-- [Recursive Function](#recursive-function)
-- [Searching Algorithms](#searching-algorithms)
+- [colt-algorithm-course](#colt-algorithm-course)
+  - [Contents](#contents)
+  - [Big O](#big-o)
+    - [Big O of Objects](#big-o-of-objects)
+    - [Big O of Object Methods](#big-o-of-object-methods)
+    - [Big O of Arrays](#big-o-of-arrays)
+    - [Big O of Array Methods](#big-o-of-array-methods)
+  - [Problem Solving Patterns](#problem-solving-patterns)
+  - [Recursive Function](#recursive-function)
+  - [Searching Algorithms](#searching-algorithms)
     - [Binary Search](#binary-search)
-    - KMP String Search
-- [Basic Sorting Algorithms](#basic-sorting-algorithms)
+  - [<a name="#basic-sorting-algorithms">Basic Sorting Algorithms (better on small data set)</a>](#basic-sorting-algorithms-better-on-small-data-set)
     - [Bubble Sort](#bubble-sort)
     - [Selection Sort](#selection-sort)
     - [Insertion Sort](#insertion-sort)
-- [Better Sorting Algorithms](#better-sorting-algorithms)
+  - [Better Sorting Algorithms](#better-sorting-algorithms)
     - [Merge Sort](#merge-sort)
     - [Quick Sort](#quick-sort)
     - [Radix Sort](#radix-sort)
-- [Data Structures](#data-structures)
-    - [Singly Linked List](#singly-link-list)
+  - [Data Structures](#data-structures)
+    - [Singly Link List](#singly-link-list)
     - [Doubly Linked List](#doubly-linked-list)
     - [Stack](#stack)
     - [Queue](#queue)
@@ -28,6 +29,7 @@
     - [Tree Traversal](#tree-traversal)
     - [Binary Heaps](#binary-heaps)
     - [Hash Tables](#hash-tables)
+    - [Graphs](#graphs)
 ## Big O
 - constant time: O(1)
 - logarithmic time: O(log n)
@@ -390,3 +392,26 @@
     - Insert: O(1)
     - Deletion: O(1)
     - Access: O(1)
+
+### Graphs
+- Tree is a type of graph, a connected graph without cycles.
+- Graph is a collection of node (vertex) with edges between (some of) them.
+- Graph might be either directed or undirected (two-way).
+- Graph might be either weighted or unweighted.
+- There are 2 common ways to represent a graph:
+    1. Adjacency List
+        - The most common type.
+        - Every vertex store a list of adjacent vertices.
+    2. Adjacency Matrix
+        - NxN boolean matrix, where N is the number of node (vertex).
+        - In an undirected graph, an adjacency matrix will be symmetric.
+- Time Complexity:
+| Operation     | Adjacency List   | Adjacency Matrix |
+| ------------- | ---------------- | ---------------- |
+| Add Vertex    | O(1)             | O(\|V^2\|)       |
+| Add Edge      | O(1)             | O(1)             |
+| Remove Vertex | O(\|V\| + \|E\|) | O(\|V^2\|)       |
+| Remove Edge   | O(\|E\|)         | O(1)             |
+| Query         | O(\|V\| + \|E\|) | O(1)             |
+| storage       | O(\|V\| + \|E\|) | O(\|V^2\|)       |
+
