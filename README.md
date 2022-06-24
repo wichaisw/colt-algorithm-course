@@ -406,8 +406,9 @@
         - NxN boolean matrix, where N is the number of node (vertex).
         - In an undirected graph, an adjacency matrix will be symmetric.
 - Time Complexity:
+  
 | Operation     | Adjacency List   | Adjacency Matrix |
-| ------------- | ---------------- | ---------------- |
+| :------------ | :--------------- | :--------------- |
 | Add Vertex    | O(1)             | O(\|V^2\|)       |
 | Add Edge      | O(1)             | O(1)             |
 | Remove Vertex | O(\|V\| + \|E\|) | O(\|V^2\|)       |
